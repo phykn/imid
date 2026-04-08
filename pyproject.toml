@@ -7,10 +7,18 @@ name = "imid"
 version = "0.1.0"
 description = "Deterministic MD5-based IDs for NumPy arrays"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.8"
+authors = [
+    { name = "kn", email = "phykn.kr@gmail.com" },
+]
 dependencies = [
     "numpy",
 ]
+
+[project.urls]
+Homepage = "https://github.com/phykn/imid"
+Repository = "https://github.com/phykn/imid"
 
 [project.optional-dependencies]
 test = [
