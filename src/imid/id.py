@@ -2,7 +2,7 @@ import hashlib
 import numpy as np
 
 
-def from_array(arr: np.ndarray, *, prefix: str = "", length: int = 8) -> str:
+def get_id(arr: np.ndarray, *, prefix: str = "", length: int = 8) -> str:
     if not isinstance(arr, np.ndarray):
         raise ValueError("arr must be a numpy.ndarray")
 

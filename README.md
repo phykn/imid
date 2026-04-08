@@ -14,18 +14,18 @@ pip install imid
 
 ```python
 import numpy as np
-from imid import from_array
+from imid import get_id
 
 arr = np.array([1.0, 2.0, 3.0])
 
-from_array(arr)                 # "a3f1b2c4"
-from_array(arr, prefix="img_")  # "img_a3f1b2c4"
-from_array(arr, length=16)      # "a3f1b2c4d5e6f7a8"
+get_id(arr)                 # "a3f1b2c4"
+get_id(arr, prefix="img_")  # "img_a3f1b2c4"
+get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 ```
 
 ## API
 
-### `from_array(arr, *, prefix="", length=8) -> str`
+### `get_id(arr, *, prefix="", length=8) -> str`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|

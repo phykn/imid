@@ -1,3 +1,3 @@
-from .id import from_array
+from .id import get_id
 
-__all__ = ["from_array"]
+__all__ = ["get_id"]
