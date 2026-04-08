@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "imid"
+version = "0.1.0"
+description = "Deterministic MD5-based IDs for NumPy arrays"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/imid"]
