@@ -18,9 +18,9 @@ from imid import from_array
 
 arr = np.array([1.0, 2.0, 3.0])
 
-from_array(arr)                          # "a3f1b2c4"
-from_array(arr, prefix="img_")          # "img_a3f1b2c4"
-from_array(arr, length=16)              # "a3f1b2c4d5e6f7a8"
+from_array(arr)                 # "a3f1b2c4"
+from_array(arr, prefix="img_")  # "img_a3f1b2c4"
+from_array(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 ```
 
 ## API
