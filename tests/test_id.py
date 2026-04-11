@@ -34,10 +34,29 @@ class TestGetId:
         assert len(result) == 16
 
     def test_invalid_input(self):
-        with pytest.raises(ValueError):
+        with pytest.raises(TypeError):
             get_id([1, 2, 3])
 
     def test_non_contiguous(self):
         arr = np.zeros((4, 4), dtype=np.uint8)
         sliced = arr[::2]
         assert get_id(sliced) == get_id(np.ascontiguousarray(sliced))
+
+    def test_length_too_large(self):
+        arr = np.zeros((4, 4), dtype=np.uint8)
+        with pytest.raises(ValueError):
+            get_id(arr, length=33)
+
+    def test_length_zero(self):
+        arr = np.zeros((4, 4), dtype=np.uint8)
+        with pytest.raises(ValueError):
+            get_id(arr, length=0)
+
+    def test_length_negative(self):
+        arr = np.zeros((4, 4), dtype=np.uint8)
+        with pytest.raises(ValueError):
+            get_id(arr, length=-1)
+
+    def test_length_max(self):
+        arr = np.zeros((4, 4), dtype=np.uint8)
+        assert len(get_id(arr, length=32)) == 32

@@ -34,7 +34,8 @@ get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 | `length` | `int` | `8` | Length of the hex digest (max 32) |
 
 - Non-contiguous arrays are handled automatically.
-- Raises `ValueError` if `arr` is not a `numpy.ndarray`.
+- Raises `TypeError` if `arr` is not a `numpy.ndarray`.
+- Raises `ValueError` if `length` is outside `1..32`.
 
 ## Development
 
