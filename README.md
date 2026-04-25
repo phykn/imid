@@ -35,7 +35,7 @@ get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 
 - Non-contiguous arrays are handled automatically.
 - Raises `TypeError` if `arr` is not a `numpy.ndarray`.
-- Raises `ValueError` if `length` is outside `1..32`.
+- Raises `ValueError` if `length` is outside 1-32 (inclusive).
 
 ## Development
 
