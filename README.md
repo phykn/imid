@@ -31,7 +31,7 @@ get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 |-----------|------|---------|-------------|
 | `arr` | `np.ndarray` | *(required)* | Input array |
 | `prefix` | `str` | `""` | String prepended to the ID |
-| `length` | `int` | `8` | Length of the hex digest (max 32) |
+| `length` | `int` | `8` | Length of the hex digest (1-32) |
 
 - Non-contiguous arrays are handled automatically.
 - Raises `TypeError` if `arr` is not a `numpy.ndarray`.
