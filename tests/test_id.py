@@ -57,6 +57,12 @@ class TestGetId:
         with pytest.raises(ValueError):
             get_id(arr, length=-1)
 
+    @pytest.mark.parametrize("length", [True, 1.0, "8"])
+    def test_invalid_length_type(self, length):
+        arr = np.zeros((4, 4), dtype=np.uint8)
+        with pytest.raises(TypeError, match="length must be an int"):
+            get_id(arr, length=length)
+
     def test_length_max(self):
         arr = np.zeros((4, 4), dtype=np.uint8)
         assert len(get_id(arr, length=32)) == 32

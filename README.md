@@ -2,7 +2,7 @@
 
 Deterministic MD5-based string IDs for NumPy arrays.
 
-The hash incorporates **dtype**, **shape**, and **byte content**, so arrays differing in any of those produce different IDs.
+The hash incorporates **dtype**, **shape**, and **byte content**, so differences in any of those affect the ID.
 
 ## Install
 
@@ -18,9 +18,9 @@ from imid import get_id
 
 arr = np.array([1.0, 2.0, 3.0])
 
-get_id(arr)                 # "a3f1b2c4"
-get_id(arr, prefix="img_")  # "img_a3f1b2c4"
-get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
+get_id(arr)                 # "70543f9b"
+get_id(arr, prefix="img_")  # "img_70543f9b"
+get_id(arr, length=16)      # "70543f9b270d20db"
 ```
 
 ## API
@@ -34,14 +34,14 @@ get_id(arr, length=16)      # "a3f1b2c4d5e6f7a8"
 | `length` | `int` | `8` | Length of the hex digest (1-32) |
 
 - Non-contiguous arrays are handled automatically.
-- Raises `TypeError` if `arr` is not a `numpy.ndarray`.
+- Raises `TypeError` if `arr` is not a `numpy.ndarray` or `length` is not an `int`.
 - Raises `ValueError` if `length` is outside 1-32 (inclusive).
 
 ## Development
 
 ```bash
-pip install -e ".[test]"
-pytest
+python -m pip install -e ".[test]"
+python -m pytest
 ```
 
 ## License

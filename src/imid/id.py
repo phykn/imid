@@ -5,6 +5,8 @@ import numpy as np
 def get_id(arr: np.ndarray, *, prefix: str = "", length: int = 8) -> str:
     if not isinstance(arr, np.ndarray):
         raise TypeError("arr must be a numpy.ndarray")
+    if not isinstance(length, int) or isinstance(length, bool):
+        raise TypeError("length must be an int")
     if not 1 <= length <= 32:
         raise ValueError("length must be between 1 and 32")
 
